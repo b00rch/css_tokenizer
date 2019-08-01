@@ -1,0 +1,33 @@
+{
+  "name": "css_tokenizer",
+  "version": "1.0.0",
+  "description": "CSS3 tokenizer",
+  "main": "index.js",
+  "directories": {
+    "test": "specs"
+  },
+  "dependencies": {
+    "jeefo_tokenizer": "0.0.37"
+  },
+  "devDependencies": {
+    "expect": "^24.8.0",
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha specs/**/*_specs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/b00rch/css_tokenizer.git"
+  },
+  "keywords": [
+    "css3",
+    "tokenizer"
+  ],
+  "author": "Boorch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b00rch/css_tokenizer/issues"
+  },
+  "homepage": "https://github.com/b00rch/css_tokenizer#readme"
+}
