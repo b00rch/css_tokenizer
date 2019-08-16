@@ -137,6 +137,7 @@ A newline, U+0009 CHARACTER TABULATION, or U+0020 SPACE.
 TODO: A whitespace code points are less than U+0020 SPACE
 */
 function is_whitespace(character) {
+    if(character === null) return false;
     return character <= ' ';
 }
 

@@ -33,9 +33,9 @@ function get_next_escape(streamer) {
 }
 
 
-describe("Test consume_escaped function.", () => {
+describe("Consume_escaped function testing.", () => {
 
-	describe("Is '\\ no character'", () => {
+	describe("Test escaped string against '\\ no character'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\ ',
@@ -51,7 +51,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\t-non hex digit'", () => {
+	describe("Test escaped string against '\\t-non hex digit'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\t',
@@ -67,7 +67,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\t non hex digit with whitespace'", () => {
+	describe("Test escaped string against '\\t non hex digit with whitespace'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\t',
@@ -83,7 +83,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\f-hex digit'", () => {
+	describe("Test escaped string against '\\f-hex digit'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\f',
@@ -99,7 +99,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\f hex digit with whitespace'", () => {
+	describe("Test escaped string against '\\f hex digit with whitespace'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\f ',
@@ -115,7 +115,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\fa-two hex digit'", () => {
+	describe("Test escaped string against '\\fa-two hex digit'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\fa',
@@ -131,7 +131,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\f0 two hex digit with whitespace'", () => {
+	describe("Test escaped string against '\\f0 two hex digit with whitespace'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\f0 ',
@@ -147,7 +147,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\123456789 first 6 digit'", () => {
+	describe("Test escaped string against '\\123456789 first 6 digit'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\123456',
@@ -163,7 +163,7 @@ describe("Test consume_escaped function.", () => {
 		});
 	});
 
-	describe("Is '\\123456 first 6 digit with whitespace'", () => {
+	describe("Test escaped string against '\\123456 first 6 digit with whitespace'", () => {
 		get_next_escape(streamer);
 
 		const result = '\\123456 ',

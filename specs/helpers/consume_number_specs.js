@@ -35,9 +35,9 @@ function get_next_number(streamer) {
 }
 
 
-describe("Test consume_number function.", () => {
+describe("Consume_number function testing.", () => {
 
-	describe("Is '+.01'", () => {
+	describe("Test number against '+.01'", () => {
 		streamer.move_cursor(1);
 
 		const result = '+.01',
@@ -53,7 +53,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '-0.02'", () => {
+	describe("Test number against '-0.02'", () => {
 		get_next_number(streamer);
 
 		const result = '-0.02',
@@ -69,7 +69,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '.304px'", () => {
+	describe("Test number against '.304px'", () => {
 		get_next_number(streamer);
 
 		const result = '.304',
@@ -85,7 +85,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '5.67e'", () => {
+	describe("Test number against '5.67e'", () => {
 		get_next_number(streamer);
 
 		const result = '5.67',
@@ -101,7 +101,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '8e901'", () => {
+	describe("Test number against '8e901'", () => {
 		get_next_number(streamer);
 
 		const result = '8e901',
@@ -117,7 +117,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '234e+ab'", () => {
+	describe("Test number against '234e+ab'", () => {
 		get_next_number(streamer);
 
 		const result = '234',
@@ -133,7 +133,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '-56.78e+90123'", () => {
+	describe("Test number against '-56.78e+90123'", () => {
 		get_next_number(streamer);
 
 		const result = '-56.78e+90123',
@@ -149,7 +149,7 @@ describe("Test consume_number function.", () => {
 		});
 	});
 
-	describe("Is '+.45e67'", () => {
+	describe("Test number against '+.45e67'", () => {
 		get_next_number(streamer);
 
 		const result = '+.45e67',

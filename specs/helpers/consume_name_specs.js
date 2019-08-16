@@ -33,9 +33,9 @@ function get_next_name(streamer) {
 }
 
 
-describe("Test consume_name function and hash token.", () => {
+describe("Consume_name function and hash token testing.", () => {
 
-	describe("Is 'a'", () => {
+	describe("Test string against 'a'", () => {
 		streamer.move_cursor(1);
 
 		const result = 'a',
@@ -51,7 +51,7 @@ describe("Test consume_name function and hash token.", () => {
 		});
 	});
 
-	describe("Is 'b123'", () => {
+	describe("Test string against 'b123'", () => {
 		get_next_name(streamer);
 
 		const result = 'b123',
@@ -67,7 +67,7 @@ describe("Test consume_name function and hash token.", () => {
 		});
 	});
 
-	describe("Is 'wor\\ds'", () => {
+	describe("Test string against 'wor\\ds'", () => {
 		get_next_name(streamer);
 
 		const result = 'wor\\ds',
@@ -83,7 +83,7 @@ describe("Test consume_name function and hash token.", () => {
 		});
 	});
 
-	describe("Is '\\20 hex'", () => {
+	describe("Test string against '\\20 hex'", () => {
 		get_next_name(streamer);
 
 		const result = '\\20 hex',
@@ -99,7 +99,7 @@ describe("Test consume_name function and hash token.", () => {
 		});
 	});
 
-	describe("Is '#hash'", () => {
+	describe("Test string against '#hash'", () => {
 		get_next_name(streamer);
 
 		const result = '#hash',
@@ -115,7 +115,7 @@ describe("Test consume_name function and hash token.", () => {
 		});
 	});
 
-	describe("Is '#\\0f hash'", () => {
+	describe("Test string against '#\\0f hash'", () => {
 		get_next_name(streamer);
 
 		const result = '#\\0f hash',

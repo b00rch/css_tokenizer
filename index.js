@@ -9,12 +9,12 @@ _._._._._._._._._._._._._._._._._._._._._.*/
 
 "use strict";
 
-const JeefoTokenizer  = require("jeefo_tokenizer");
+const JeefoTokenizer  = require("./jeefo_tokenizer_extended");
 
 const css_tokenizer = new JeefoTokenizer();
 
+css_tokenizer.register(require('./definations/important'));		// Priority = 21
 css_tokenizer.register(require('./definations/match'));			// Priority = 20
-
 css_tokenizer.register(require('./definations/cdo'));			// Priority = 10
 css_tokenizer.register(require('./definations/cdc'));			// Priority = 10
 css_tokenizer.register(require('./definations/url'));			// Priority = 7

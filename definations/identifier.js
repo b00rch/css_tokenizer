@@ -32,9 +32,10 @@ _._._._._._._._._._._._._._._._._._._._._.*/
 // If the char is "#" then potential tokens are:
 // - HASH                  #header, #fff
 
-const helpers              = require("../helpers"),
-	  _consume_name        = require("../helpers/consume_name"),
-	  _is_identifier_start = helpers.is_identifier_start;
+const helpers              = require("../helpers");
+const _consume_name        = require("../helpers/consume_name");
+const _is_identifier_start = helpers.is_identifier_start;
+const _is_whitespace       = helpers.is_whitespace;
 
 module.exports = {
 	id       : "Identifier",
@@ -58,10 +59,20 @@ module.exports = {
 			type;
 
 		if (next_character === '(')  {
-			value += streamer.get_next_character(); 
-			type   = 'FUNCTION';
+			streamer.get_next_character();
+			type = 'FUNCTION';
 		}
-		else type = 'IDENT';
+		else {
+			let index = 0;
+			while (_is_whitespace(next_character))  {
+				next_character = streamer.at(start.index + length + (++index))
+			}
+
+			if (next_character === ':') {
+				type = 'DECLARATION';
+			}
+			else type = 'IDENT';
+		}
 
 
 	    token.value  = value;

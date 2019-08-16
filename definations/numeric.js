@@ -53,6 +53,7 @@ module.exports = {
 	is : (current_character, streamer) => {
 		const second_character = streamer.at(streamer.cursor.index + 1),
 			  third_character  = streamer.at(streamer.cursor.index + 2);
+		if (second_character === null)  return false;
 		return _is_number_start(
 			current_character,
 			second_character, 

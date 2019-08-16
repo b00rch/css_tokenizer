@@ -22,11 +22,11 @@ module.exports = {
     initialize : (token, current_character, streamer) => {
     	const start = streamer.get_cursor();
 
-    	let space_characters   = current_character,
-    		current_index = start.index;
+    	let space_characters = current_character,
+    		current_index    = start.index;
 
         while (_is_whitespace(streamer.at(++current_index))) {
-        	space_characters += streamer.get_next_character()
+            space_characters += streamer.get_next_character();
         }
 
         token.value = space_characters;
